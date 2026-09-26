@@ -48,7 +48,7 @@
             padding: 40px 0 60px;
         }
 
-        /* Editorial Header */
+        /* Clean Editorial Header (No background watermark) */
         .hero {
             background: linear-gradient(135deg, #2B2620 0%, #1A1714 100%);
             color: #FAF7F2;
@@ -57,20 +57,6 @@
             margin-bottom: 28px;
             box-shadow: 0 10px 30px rgba(26, 23, 20, 0.08);
             border: 1px solid #3D362F;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: "शब्द यात्रा";
-            position: absolute;
-            right: 20px;
-            bottom: -15px;
-            font-size: 90px;
-            font-family: var(--font-serif);
-            color: rgba(255, 255, 255, 0.03);
-            pointer-events: none;
-            font-weight: 700;
         }
 
         .brand-badge {
@@ -187,51 +173,61 @@
             color: var(--text-main);
         }
 
-        /* Data Safety Summary Table */
-        .summary-box {
-            background: #FDFBF7;
-            border: 1px solid var(--border-subtle);
-            border-radius: 14px;
-            overflow: hidden;
+        /* Responsive Data Safety Cards (Fixed for Mobile & Desktop) */
+        .safety-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
             margin: 16px 0 10px;
         }
 
-        .summary-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
+        .safety-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #FDFBF8;
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 14px 16px;
+            gap: 12px;
+            transition: background 0.15s;
         }
 
-        .summary-table th {
-            background: #F4EDE2;
-            text-align: left;
-            padding: 10px 14px;
-            color: var(--text-main);
+        .safety-row:hover {
+            background: #F8F3EA;
+        }
+
+        .safety-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .safety-title {
             font-weight: 600;
-            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            font-size: 14px;
         }
 
-        .summary-table td {
-            padding: 10px 14px;
-            border-bottom: 1px solid var(--border-light);
+        .safety-desc {
+            font-size: 12.5px;
             color: var(--text-muted);
-        }
-
-        .summary-table tr:last-child td {
-            border-bottom: none;
         }
 
         .status-badge {
             display: inline-block;
-            padding: 2px 8px;
-            border-radius: 6px;
+            padding: 4px 10px;
+            border-radius: 8px;
             font-size: 11px;
             font-weight: 600;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            text-align: center;
         }
 
-        .status-local { background: #E8F5E9; color: #2E7D32; }
-        .status-admob { background: #FFF3E0; color: #E65100; }
-        .status-zero { background: #EDE7F6; color: #512DA8; }
+        .status-local { background: #E8F5E9; color: #2E7D32; border: 1px solid #C8E6C9; }
+        .status-admob { background: #FFF3E0; color: #D84315; border: 1px solid #FFE0B2; }
+        .status-zero { background: #EDE7F6; color: #512DA8; border: 1px solid #D1C4E9; }
 
         a {
             color: var(--accent-warm);
@@ -268,11 +264,11 @@
             }
 
             h1 {
-                font-size: 30px;
+                font-size: 28px;
             }
 
             .card {
-                padding: 22px 20px;
+                padding: 22px 18px;
                 border-radius: 16px;
             }
 
@@ -280,6 +276,17 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 8px;
+            }
+
+            .safety-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 12px 14px;
+            }
+
+            .status-badge {
+                align-self: flex-start;
             }
         }
     </style>
@@ -296,13 +303,13 @@
                 Comprehensive data safety, on-device AI privacy disclosures, and user rights for the Word Yatra Android application.
             </p>
             <div class="meta-strip">
-                <span><strong>Developer:</strong> Kotlin Knights</span>
+                <span><strong>Developer:</strong> Moon Knight</span>
                 <span><strong>Platform:</strong> Android</span>
                 <span><strong>Effective Date:</strong> September 2026</span>
             </div>
         </header>
 
-        <!-- Quick Summary Card for Google Play Reviewers -->
+        <!-- Quick Summary Card for Google Play Reviewers (Responsive Tiles) -->
         <section class="card">
             <div class="card-header">
                 <h2>Google Play Data Safety at a Glance</h2>
@@ -310,49 +317,46 @@
             </div>
             <p>Word Yatra is designed with a <strong>privacy-first, local-first core</strong>. Here is the concise summary corresponding to Google Play Console Data Safety declarations:</p>
             
-            <div class="summary-box">
-                <table class="summary-table">
-                    <thead>
-                        <tr>
-                            <th>Data Type / Feature</th>
-                            <th>Storage / Transmission</th>
-                            <th>Third-Party Share</th>
-                            <th>Classification</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Search History & Saved Words</strong></td>
-                            <td>On-Device Private SQLite</td>
-                            <td>Never Shared</td>
-                            <td><span class="status-badge status-local">Local Only</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Camera OCR Text Scanning</strong></td>
-                            <td>Processed in RAM (Ephemeral)</td>
-                            <td>Zero Storage / Zero Upload</td>
-                            <td><span class="status-badge status-local">Ephemeral</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Voice Search (Microphone)</strong></td>
-                            <td>System SpeechRecognizer</td>
-                            <td>Zero Audio Recordings Saved</td>
-                            <td><span class="status-badge status-local">System Handled</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Advertising Identifiers (AdMob)</strong></td>
-                            <td>Google AdMob SDK</td>
-                            <td>Google Ad Services</td>
-                            <td><span class="status-badge status-admob">Ad-Supported</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>User Account / Login Data</strong></td>
-                            <td>None (No signup required)</td>
-                            <td>Zero Collection</td>
-                            <td><span class="status-badge status-zero">No Accounts</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="safety-grid">
+                <div class="safety-row">
+                    <div class="safety-info">
+                        <span class="safety-title">Search History & Saved Words</span>
+                        <span class="safety-desc">Stored in private SQLite on device • Never uploaded or shared</span>
+                    </div>
+                    <span class="status-badge status-local">Local Only</span>
+                </div>
+
+                <div class="safety-row">
+                    <div class="safety-info">
+                        <span class="safety-title">Camera OCR Text Scanning</span>
+                        <span class="safety-desc">Processed in RAM solely to read words • Zero photos saved or sent</span>
+                    </div>
+                    <span class="status-badge status-local">Ephemeral Only</span>
+                </div>
+
+                <div class="safety-row">
+                    <div class="safety-info">
+                        <span class="safety-title">Voice Search (Microphone)</span>
+                        <span class="safety-desc">Native Android SpeechRecognizer • Zero voice recordings stored</span>
+                    </div>
+                    <span class="status-badge status-local">System Handled</span>
+                </div>
+
+                <div class="safety-row">
+                    <div class="safety-info">
+                        <span class="safety-title">Advertising Identifiers (AdMob)</span>
+                        <span class="safety-desc">Google AdMob SDK for ad serving, frequency capping & diagnostics</span>
+                    </div>
+                    <span class="status-badge status-admob">Ad-Supported</span>
+                </div>
+
+                <div class="safety-row">
+                    <div class="safety-info">
+                        <span class="safety-title">User Accounts & Personal Telemetry</span>
+                        <span class="safety-desc">No login or signup required • Zero first-party tracking</span>
+                    </div>
+                    <span class="status-badge status-zero">No Accounts</span>
+                </div>
             </div>
         </section>
 
@@ -363,7 +367,7 @@
                 <span class="tag">Overview</span>
             </div>
             <p>
-                Kotlin Knights operates the <strong>Word Yatra</strong> Android application. This Privacy Policy outlines how Word Yatra accesses, utilizes, stores, and protects your information when you use our English-Hindi vocabulary, offline dictionary, and language discovery features.
+                Moon Knight operates the <strong>Word Yatra</strong> Android application. This Privacy Policy outlines how Word Yatra accesses, utilizes, stores, and protects your information when you use our English-Hindi vocabulary, offline dictionary, and language discovery features.
             </p>
             <p>
                 Word Yatra delivers an editorial, distraction-free learning experience. By using Word Yatra, you agree to the privacy practices outlined in this policy.
@@ -536,17 +540,16 @@
                 For questions, feedback, or inquiries regarding Word Yatra's privacy practices, contact the maintainers:
             </p>
             <ul>
-                <li><strong>Developer:</strong> Kotlin Knights</li>
+                <li><strong>Developer:</strong> Moon Knight</li>
                 <li><strong>Application:</strong> Word Yatra</li>
                 <li><strong>Privacy Email:</strong> <a href="mailto:wordyatra.support@gmail.com">wordyatra.support@gmail.com</a></li>
                 <li><strong>Issue Tracker:</strong> <a href="https://github.com/wordyatraconsole/WordYatra-Privacy/issues" target="_blank" rel="noopener">GitHub Privacy Issues</a></li>
-                <li><strong>Official Hosting URL:</strong> <a href="https://wordyatraconsole.github.io/WordYatra-Privacy/">https://wordyatraconsole.github.io/WordYatra-Privacy/</a></li>
             </ul>
         </section>
 
         <!-- Footer -->
         <footer class="footer">
-            <p>© 2026 Kotlin Knights. All rights reserved. Word Yatra™.</p>
+            <p>© 2026 Moon Knight. All rights reserved. Word Yatra™.</p>
             <p style="margin-top: 4px; font-size: 12px; opacity: 0.8;">Lexical data licensed under CC BY-SA 3.0 & GFDL.</p>
         </footer>
 

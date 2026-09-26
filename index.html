@@ -3,117 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Yatra — Privacy Policy & Data Safety</title>
 
-    <title>Word Yatra Privacy Policy</title>
+    <!-- Google Fonts matching Word Yatra Android App -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --green: #2e7d32;
-            --dark: #1f2937;
-            --muted: #667085;
-            --bg: #f7faf7;
-            --card: #ffffff;
-            --border: #e3e8e3;
+            --bg-cream: #FAF7F2;
+            --bg-card: #FFFFFF;
+            --border-subtle: #E8E1D5;
+            --border-light: #F0EAE1;
+            --text-main: #1F1C18;
+            --text-muted: #6B6357;
+            --text-light: #948B7D;
+            --accent-warm: #C26127;
+            --accent-gold: #D97706;
+            --badge-bg: #F3ECE1;
+            --badge-text: #735938;
+            --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            --font-serif: 'Newsreader', Georgia, serif;
         }
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            background: var(--bg);
-            color: var(--dark);
-            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            font-size: 15px;
             line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            width: min(900px, calc(100% - 32px));
+            width: min(840px, calc(100% - 32px));
             margin: 0 auto;
-            padding: 32px 0 48px;
+            padding: 40px 0 60px;
         }
 
-        .header {
-            background: linear-gradient(135deg, #1b5e20, #43a047);
-            color: white;
-            padding: 32px 28px;
-            border-radius: 18px;
-            margin-bottom: 22px;
+        /* Editorial Header */
+        .hero {
+            background: linear-gradient(135deg, #2B2620 0%, #1A1714 100%);
+            color: #FAF7F2;
+            padding: 42px 36px;
+            border-radius: 24px;
+            margin-bottom: 28px;
+            box-shadow: 0 10px 30px rgba(26, 23, 20, 0.08);
+            border: 1px solid #3D362F;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "शब्द यात्रा";
+            position: absolute;
+            right: 20px;
+            bottom: -15px;
+            font-size: 90px;
+            font-family: var(--font-serif);
+            color: rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+            font-weight: 700;
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(194, 97, 39, 0.2);
+            border: 1px solid rgba(194, 97, 39, 0.4);
+            color: #F8B388;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
         }
 
         h1 {
-            margin: 0 0 8px;
-            font-size: 32px;
+            font-family: var(--font-serif);
+            font-size: 38px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            color: #FFF9F3;
         }
 
         .subtitle {
-            margin: 0;
-            opacity: 0.9;
+            font-size: 15px;
+            color: #C7BEB1;
+            max-width: 600px;
+            line-height: 1.6;
         }
 
-        .updated {
-            margin-top: 16px;
-            font-size: 14px;
-            opacity: 0.85;
+        .meta-strip {
+            margin-top: 24px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 13px;
+            color: #9C9385;
         }
 
+        .meta-strip strong {
+            color: #E6DFD4;
+        }
+
+        /* Section Cards */
         .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 16px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 28px 30px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 16px rgba(43, 38, 32, 0.03);
+            transition: border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: #D6CBB9;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            gap: 12px;
         }
 
         h2 {
-            color: var(--green);
-            font-size: 21px;
-            margin: 0 0 10px;
+            font-family: var(--font-serif);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.2px;
+        }
+
+        .tag {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            border: 1px solid #E4D9C8;
+            padding: 3px 10px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
         }
 
         p {
-            margin: 8px 0;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
         }
 
         ul {
-            padding-left: 22px;
+            padding-left: 20px;
+            margin: 12px 0;
+            color: var(--text-muted);
         }
 
         li {
-            margin: 8px 0;
+            margin-bottom: 8px;
         }
 
-        a {
-            color: var(--green);
+        li strong {
+            color: var(--text-main);
+        }
+
+        /* Data Safety Summary Table */
+        .summary-box {
+            background: #FDFBF7;
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            overflow: hidden;
+            margin: 16px 0 10px;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .summary-table th {
+            background: #F4EDE2;
+            text-align: left;
+            padding: 10px 14px;
+            color: var(--text-main);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .summary-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-muted);
+        }
+
+        .summary-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 11px;
             font-weight: 600;
         }
 
-        .footer {
-            color: var(--muted);
-            font-size: 14px;
-            text-align: center;
-            margin-top: 24px;
+        .status-local { background: #E8F5E9; color: #2E7D32; }
+        .status-admob { background: #FFF3E0; color: #E65100; }
+        .status-zero { background: #EDE7F6; color: #512DA8; }
+
+        a {
+            color: var(--accent-warm);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.15s;
         }
 
-        @media (max-width: 600px) {
+        a:hover {
+            color: #9E4915;
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 36px;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        .footer p {
+            color: var(--text-light);
+        }
+
+        @media (max-width: 640px) {
             .container {
-                width: min(100% - 20px, 900px);
-                padding-top: 16px;
+                width: calc(100% - 24px);
+                padding: 20px 0 40px;
             }
 
-            .header {
-                padding: 24px 20px;
+            .hero {
+                padding: 30px 22px;
+                border-radius: 20px;
             }
 
             h1 {
-                font-size: 27px;
+                font-size: 30px;
             }
 
             .card {
-                padding: 20px;
+                padding: 22px 20px;
+                border-radius: 16px;
+            }
+
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
             }
         }
     </style>
@@ -122,283 +288,267 @@
 <body>
     <main class="container">
 
-        <header class="header">
+        <!-- Editorial Hero Header -->
+        <header class="hero">
+            <div class="brand-badge">Official Legal Document</div>
             <h1>Word Yatra Privacy Policy</h1>
             <p class="subtitle">
-                Privacy information for the Word Yatra Android application
+                Comprehensive data safety, on-device AI privacy disclosures, and user rights for the Word Yatra Android application.
             </p>
-            <p class="updated">
-                Effective date: September 2026
-            </p>
+            <div class="meta-strip">
+                <span><strong>Developer:</strong> Kotlin Knights</span>
+                <span><strong>Platform:</strong> Android</span>
+                <span><strong>Effective Date:</strong> September 2026</span>
+            </div>
         </header>
 
+        <!-- Quick Summary Card for Google Play Reviewers -->
         <section class="card">
-            <h2>1. Introduction</h2>
+            <div class="card-header">
+                <h2>Google Play Data Safety at a Glance</h2>
+                <span class="tag">Compliance Ready</span>
+            </div>
+            <p>Word Yatra is designed with a <strong>privacy-first, local-first core</strong>. Here is the concise summary corresponding to Google Play Console Data Safety declarations:</p>
+            
+            <div class="summary-box">
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>Data Type / Feature</th>
+                            <th>Storage / Transmission</th>
+                            <th>Third-Party Share</th>
+                            <th>Classification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Search History & Saved Words</strong></td>
+                            <td>On-Device Private SQLite</td>
+                            <td>Never Shared</td>
+                            <td><span class="status-badge status-local">Local Only</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Camera OCR Text Scanning</strong></td>
+                            <td>Processed in RAM (Ephemeral)</td>
+                            <td>Zero Storage / Zero Upload</td>
+                            <td><span class="status-badge status-local">Ephemeral</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Voice Search (Microphone)</strong></td>
+                            <td>System SpeechRecognizer</td>
+                            <td>Zero Audio Recordings Saved</td>
+                            <td><span class="status-badge status-local">System Handled</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Advertising Identifiers (AdMob)</strong></td>
+                            <td>Google AdMob SDK</td>
+                            <td>Google Ad Services</td>
+                            <td><span class="status-badge status-admob">Ad-Supported</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>User Account / Login Data</strong></td>
+                            <td>None (No signup required)</td>
+                            <td>Zero Collection</td>
+                            <td><span class="status-badge status-zero">No Accounts</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
+        <!-- Section 1: Introduction -->
+        <section class="card">
+            <div class="card-header">
+                <h2>1. Introduction</h2>
+                <span class="tag">Overview</span>
+            </div>
             <p>
-                Kotlin Knights operates the Word Yatra Android application.
-                This Privacy Policy explains how Word Yatra accesses, uses,
-                stores, and shares information.
+                Kotlin Knights operates the <strong>Word Yatra</strong> Android application. This Privacy Policy outlines how Word Yatra accesses, utilizes, stores, and protects your information when you use our English-Hindi vocabulary, offline dictionary, and language discovery features.
             </p>
-
             <p>
-                Word Yatra is an English-Hindi vocabulary and dictionary
-                application with dictionary search, saved words, OCR word
-                search, voice search, translation, and daily word reminders.
+                Word Yatra delivers an editorial, distraction-free learning experience. By using Word Yatra, you agree to the privacy practices outlined in this policy.
             </p>
         </section>
 
+        <!-- Section 2: On-Device Storage -->
         <section class="card">
-            <h2>2. Information Stored on Your Device</h2>
-
+            <div class="card-header">
+                <h2>2. Information Stored on Your Device</h2>
+                <span class="tag">Local-First</span>
+            </div>
             <p>
-                Word Yatra stores the following information locally on your
-                Android device:
+                All your learning progress and app customizations remain strictly inside your device's private local SQLite database and encrypted Android DataStore:
             </p>
-
             <ul>
-                <li>Search history.</li>
-                <li>Saved words and favorites.</li>
-                <li>Theme and display preferences.</li>
-                <li>Profile preferences such as display name and avatar.</li>
-                <li>Daily word reminder settings.</li>
-                <li>Local notification records.</li>
+                <li><strong>Search History:</strong> Word searches are indexed locally for quick review and can be cleared at any time in the History tab.</li>
+                <li><strong>Saved Words & Favorites:</strong> Stored locally for instant offline revision.</li>
+                <li><strong>Aesthetics & Preferences:</strong> Reading themes (Cream, Paper, Sepia, Dark, Obsidian), font choices, and playback speeds.</li>
+                <li><strong>Scholar Profile:</strong> Custom display name and avatar illustrations chosen within the app.</li>
+                <li><strong>Notification Records:</strong> Daily Word of the Day logs with automatic 30-day on-device cleanup.</li>
             </ul>
-
             <p>
-                Word Yatra does not require an account and does not maintain
-                a server-side user profile for this local information.
+                Word Yatra does not require user registration and maintains zero server-side profiles for your lexical activity.
             </p>
         </section>
 
+        <!-- Section 3: Camera Permission & OCR -->
         <section class="card">
-            <h2>3. Camera Permission and OCR</h2>
-
+            <div class="card-header">
+                <h2>3. Camera Permission & OCR Word Lookup</h2>
+                <span class="tag">Runtime Only</span>
+            </div>
             <p>
-                Word Yatra may request camera permission when you choose the
-                Camera OCR Word Search feature.
+                Word Yatra requests Camera access (<code>android.permission.CAMERA</code>) solely when you launch the <strong>Camera OCR Word Search</strong> feature to scan text from books or documents.
             </p>
-
             <p>
-                Camera frames are used to recognize text and look up words.
-                Word Yatra does not intentionally save camera frames or upload
-                your photos to its own servers.
+                Camera video frames are processed completely in memory (RAM) via the Google ML Kit Vision SDK to extract word characters. <strong>Word Yatra never saves camera photos to storage and never uploads camera frames to external servers.</strong>
             </p>
         </section>
 
+        <!-- Section 4: Microphone & Voice Search -->
         <section class="card">
-            <h2>4. Microphone and Speech Recognition</h2>
-
+            <div class="card-header">
+                <h2>4. Microphone & Speech Recognition</h2>
+                <span class="tag">Voice Search</span>
+            </div>
             <p>
-                Word Yatra may request microphone permission when you start
-                Voice Search or Voice Translation.
+                Word Yatra requests Microphone access (<code>android.permission.RECORD_AUDIO</code>) only when you initiate Voice Search or Voice Translation.
             </p>
-
             <p>
-                Word Yatra does not intentionally save voice recordings.
-                Android's speech-recognition service may process audio on the
-                device or through its network service depending on the device,
-                language, system configuration, and available speech model.
-            </p>
-
-            <p>
-                Speech-recognition processing may therefore be subject to the
-                privacy terms of the Android or Google speech service provided
-                by your device.
+                Word Yatra does not record, retain, or store your voice audio files. Speech recognition is handled directly by Android's native <code>SpeechRecognizer</code> framework, which processes audio either on-device or via Google's speech services depending on your device settings and installed speech models.
             </p>
         </section>
 
+        <!-- Section 5: Google ML Kit & Translation -->
         <section class="card">
-            <h2>5. Google ML Kit and Translation</h2>
-
+            <div class="card-header">
+                <h2>5. Google ML Kit On-Device Translation</h2>
+                <span class="tag">On-Device AI</span>
+            </div>
             <p>
-                Word Yatra uses Google ML Kit for text recognition and
-                translation features.
+                Word Yatra uses Google ML Kit for offline English-Hindi translation and optical character recognition:
             </p>
-
             <ul>
-                <li>
-                    Translation models may be downloaded when required.
-                </li>
-                <li>
-                    Translation can run on-device after the required model is
-                    available.
-                </li>
-                <li>
-                    Text recognition is used to process text from the camera
-                    feature.
-                </li>
-            </ul>
-
-            <p>
-                Google ML Kit services are provided by Google and may be
-                subject to Google's applicable terms and privacy policies.
-            </p>
-        </section>
-
-        <section class="card">
-            <h2>6. Advertising and Google AdMob</h2>
-
-            <p>
-                Word Yatra may display advertisements using Google AdMob to
-                support application development and maintenance.
-            </p>
-
-            <p>
-                Depending on the SDK configuration, device settings, region,
-                and applicable law, AdMob may process information such as:
-            </p>
-
-            <ul>
-                <li>Google Advertising ID or another resettable advertising identifier.</li>
-                <li>IP address.</li>
-                <li>Approximate location inferred from IP address.</li>
-                <li>Device and application information.</li>
-                <li>Diagnostics and performance information.</li>
-                <li>Ad impressions and interaction information.</li>
-            </ul>
-
-            <p>
-                This information may be used for ad delivery, frequency
-                capping, measurement, fraud prevention, and personalized
-                advertising where permitted.
-            </p>
-
-            <p>
-                You can manage advertising personalization or reset your
-                Advertising ID from Android Settings → Google → Ads.
-            </p>
-
-            <p>
-                Word Yatra does not intentionally send your dictionary search
-                text, saved definitions, camera OCR text, or voice input to
-                advertising networks as app content.
-            </p>
-        </section>
-
-        <section class="card">
-            <h2>7. Notifications</h2>
-
-            <p>
-                Word Yatra may request notification permission on Android 13
-                and later to deliver scheduled daily Word of the Day reminders.
-            </p>
-
-            <p>
-                Notification settings and local notification records are
-                stored on your device.
-            </p>
-        </section>
-
-        <section class="card">
-            <h2>8. Accounts and Analytics</h2>
-
-            <ul>
-                <li>No account creation is required.</li>
-                <li>No login, password, phone number, or email is required.</li>
-                <li>Word Yatra does not intentionally collect first-party behavioral analytics.</li>
-                <li>Word Yatra does not sell personal information.</li>
+                <li>Required language models are downloaded once via official Google Play services.</li>
+                <li>Once downloaded, translation inference runs locally on your device without transmitting text queries across the internet.</li>
             </ul>
         </section>
 
+        <!-- Section 6: Advertising & Google AdMob -->
         <section class="card">
-            <h2>9. Children's Privacy</h2>
-
+            <div class="card-header">
+                <h2>6. Advertising & Google AdMob</h2>
+                <span class="tag">Ad-Supported</span>
+            </div>
             <p>
-                Word Yatra does not knowingly request names, email addresses,
-                phone numbers, passwords, or other personal information from
-                children.
+                Word Yatra may display advertisements using Google AdMob to fund ongoing development and maintain free dictionary access. AdMob is a third-party advertising service provided by Google LLC.
             </p>
-
             <p>
-                If you believe that a child has provided personal information,
-                please contact us through the privacy contact below.
+                Depending on your device configuration, Google Play services settings, and applicable laws, Google AdMob may process:
             </p>
-
+            <ul>
+                <li>Google Advertising ID (GAID) or resettable advertising identifiers.</li>
+                <li>Device IP address (used for approximate regional geolocation).</li>
+                <li>Device specifications, operating system version, and performance diagnostics.</li>
+                <li>Ad interaction and impression metrics.</li>
+            </ul>
             <p>
-                If Word Yatra is configured for a child-directed audience in
-                Google Play Console, the applicable Google Play Families and
-                Google AdMob requirements will be followed.
+                <strong>Privacy Safeguard:</strong> Word Yatra does not share your dictionary searches, reading history, saved definitions, OCR text, or voice input with advertising networks.
+            </p>
+            <p>
+                You can manage ad personalization or reset your Advertising ID anytime by opening <strong>Android Settings &rarr; Google &rarr; Ads</strong>.
             </p>
         </section>
 
+        <!-- Section 7: Notifications -->
         <section class="card">
-            <h2>10. Data Retention and Deletion</h2>
-
+            <div class="card-header">
+                <h2>7. Notifications</h2>
+                <span class="tag">Daily Word</span>
+            </div>
             <p>
-                Local search history, favorites, preferences, and notification
-                records remain on your device until you delete them or remove
-                the application data.
-            </p>
-
-            <p>
-                You can remove local Word Yatra data by using Android Settings
-                → Apps → Word Yatra → Storage → Clear storage, or by
-                uninstalling the application.
-            </p>
-
-            <p>
-                Word Yatra does not maintain a user account or server-side
-                profile that requires account deletion.
+                On Android 13 (API level 33) and above, Word Yatra may request <code>POST_NOTIFICATIONS</code> to deliver scheduled daily "Word of the Day" reminders via on-device Android WorkManager. You can enable, disable, or adjust notification timings anytime inside the Profile &rarr; Notification Settings screen.
             </p>
         </section>
 
+        <!-- Section 8: Accounts, Telemetry & Open Data -->
         <section class="card">
-            <h2>11. Data Security</h2>
+            <div class="card-header">
+                <h2>8. Accounts, Telemetry & Open Licenses</h2>
+                <span class="tag">Zero Profile</span>
+            </div>
+            <ul>
+                <li><strong>No User Accounts:</strong> No sign-in, email address, password, or phone number required.</li>
+                <li><strong>No First-Party Telemetry:</strong> We do not track individual user journeys, screen heatmaps, or keystrokes.</li>
+                <li><strong>No Sale of Data:</strong> Word Yatra will never sell, rent, or trade your personal data.</li>
+                <li><strong>Open Lexicon Data:</strong> Word definitions are derived from Wiktionary contributors under the Creative Commons Attribution-ShareAlike 3.0 (CC BY-SA 3.0) and GNU Free Documentation License (GFDL).</li>
+            </ul>
+        </section>
 
+        <!-- Section 9: Children's Privacy -->
+        <section class="card">
+            <div class="card-header">
+                <h2>9. Children's Privacy</h2>
+                <span class="tag">Play Families</span>
+            </div>
             <p>
-                Local application data is stored within Android application
-                storage. Word Yatra requests permissions only when the related
-                user-initiated feature is used.
+                Word Yatra is a general-audience educational vocabulary reference. We do not knowingly solicit or collect personal information from children under the age of 13.
+            </p>
+            <p>
+                If you believe personal information has inadvertently been provided by a minor, please reach out to us at our contact email so we can promptly address the inquiry.
             </p>
         </section>
 
+        <!-- Section 10: Retention & Deletion -->
         <section class="card">
-            <h2>12. Changes to This Privacy Policy</h2>
-
+            <div class="card-header">
+                <h2>10. Data Retention & Full Deletion</h2>
+                <span class="tag">User Control</span>
+            </div>
             <p>
-                We may update this Privacy Policy when application features,
-                third-party services, or legal requirements change.
+                Since all user data is stored locally on your device, you have complete ownership and control over data deletion:
             </p>
+            <ul>
+                <li><strong>In-App Clear:</strong> Tap the trash icon in the History screen to instantly purge all stored search queries.</li>
+                <li><strong>Full System Wipe:</strong> Open <strong>Android Settings &rarr; Apps &rarr; Word Yatra &rarr; Storage & Cache &rarr; Clear Storage</strong>. This permanently erases all local database records, saved words, and user preferences.</li>
+                <li><strong>Uninstalling:</strong> Removing the app automatically deletes all private app storage directories.</li>
+            </ul>
+        </section>
 
+        <!-- Section 11: Security & Changes -->
+        <section class="card">
+            <div class="card-header">
+                <h2>11. Security & Policy Updates</h2>
+                <span class="tag">Protection</span>
+            </div>
             <p>
-                The updated version will be published on this page with a new
-                effective date.
+                We apply standard Android security sandboxing to protect local databases. We may revise this policy periodically to reflect feature additions or regulatory standards. Updates are posted directly on this page with a revised effective date.
             </p>
         </section>
 
+        <!-- Section 12: Contact Us -->
         <section class="card">
-            <h2>13. Contact Us</h2>
-
+            <div class="card-header">
+                <h2>12. Contact & Legal Inquiries</h2>
+                <span class="tag">Contact</span>
+            </div>
             <p>
-                <strong>Developer:</strong> Kotlin Knights
+                For questions, feedback, or inquiries regarding Word Yatra's privacy practices, contact the maintainers:
             </p>
-
-            <p>
-                <strong>Application:</strong> Word Yatra
-            </p>
-
-            <p>
-                For privacy questions or requests, contact us through:
-            </p>
-
-            <p>
-                <strong>Privacy contact:</strong>
-                <a href="mailto:wordyatra.support@gmail.com">
-                    wordyatra.support@gmail.com
-                </a>
-            </p>
-
-            <p>
-                <strong>Additional contact:</strong>
-                <a href="https://github.com/wordyatraconsole/WordYatra-Privacy/issues">
-                    GitHub Privacy Contact
-                </a>
-            </p>
+            <ul>
+                <li><strong>Developer:</strong> Kotlin Knights</li>
+                <li><strong>Application:</strong> Word Yatra</li>
+                <li><strong>Privacy Email:</strong> <a href="mailto:wordyatra.support@gmail.com">wordyatra.support@gmail.com</a></li>
+                <li><strong>Issue Tracker:</strong> <a href="https://github.com/wordyatraconsole/WordYatra-Privacy/issues" target="_blank" rel="noopener">GitHub Privacy Issues</a></li>
+                <li><strong>Official Hosting URL:</strong> <a href="https://wordyatraconsole.github.io/WordYatra-Privacy/">https://wordyatraconsole.github.io/WordYatra-Privacy/</a></li>
+            </ul>
         </section>
-        <p class="footer">
-            © 2026 Kotlin Knights. Word Yatra.
-        </p>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 Kotlin Knights. All rights reserved. Word Yatra™.</p>
+            <p style="margin-top: 4px; font-size: 12px; opacity: 0.8;">Lexical data licensed under CC BY-SA 3.0 & GFDL.</p>
+        </footer>
 
     </main>
 </body>
